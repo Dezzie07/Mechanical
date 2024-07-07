@@ -16,14 +16,14 @@ print(f"Heat recovery rate: {Q} kW")
 h_in = CP.PropsSI('H', 'P', p, 'T', temperature_in, 'Water')  # J/kg
 h_out = CP.PropsSI('H', 'P', p, 'T', temperature_out, 'Water')  # J/kg
 
-print(f"Specific enthalpy at inlet: {h_in / 1000} kJ/kg")
-print(f"Specific enthalpy at outlet: {h_out / 1000} kJ/kg")
+print(f"Enthalpy at inlet: {h_in / 1000} kJ/kg")
+print(f"Enthalpy at outlet: {h_out / 1000} kJ/kg")
 
 # The required heat input using enthalpies and mass flow rate. ( Q = m\delta(H))
 required_heat_input = m_dot * (h_out - h_in) / 1e3  # Also conversion to kW
 print(f"Required heat input: {required_heat_input:.2f} kW")
 
-# Calculate COP using heat demand
+# COP using heat demand
 COP = heating_demand / required_heat_input
 print(f"COP: {COP:.2f}")
 
