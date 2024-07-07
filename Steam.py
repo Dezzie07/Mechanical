@@ -23,7 +23,7 @@ required_heat_input = m_dot * (h_out - h_in) / 1e3
 print(f"Required heat input: {required_heat_input} kW")
 
 # COP using heat demand
-COP = heating_demand / required_heat_input
+COP = heating_demand / Q
 print(f"COP: {COP}")
 
 
@@ -31,4 +31,3 @@ if Q >= required_heat_input:
   print("The heat recovery system meets the heat demand.")
 else:
    print("The heat recovery system does not meet the heat demand. Additional heat source is required.")
-
